@@ -50,7 +50,7 @@ public:
     // Destructor
     ~ParticleFilter()
     {
-        
+
     }
 
     /**
@@ -81,7 +81,7 @@ public:
      * @param predicted Vector of predicted landmark observations
      * @param observations Vector of landmark observations
      */
-    void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
+    void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations, Particle &particle);
 
     /**
      * updateWeights Updates the weights for each particle based on the likelihood of the
@@ -104,7 +104,7 @@ public:
      * Set a particles list of associations, along with the associations calculated world x,y coordinates
      * This can be a very useful debugging tool to make sure transformations are correct and assocations correctly connected
      */
-    Particle SetAssociations(Particle& particle, const std::vector<int>& associations,
+    void SetAssociations(Particle& particle, const std::vector<int>& associations,
                              const std::vector<double>& sense_x, const std::vector<double>& sense_y);
 
 
